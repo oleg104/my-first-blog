@@ -1,16 +1,14 @@
-<html>
-    <head>
-	<title>Oleg's blog</title>
-    <head>
-    <body>
-		<p>Hi	there!</p>
-		<p>It	works!</p>
+{%	extends	'blog/base.html'    %}
+
+{% block content %}
 	{% for post in posts %}
-	    <div>
-		<p>published: {{ post.published_date }}</p>
+	    <div class="post">
+		<div class="date">
+		    published: {{ post.published_date }}
+		</div>
+
 		<h1><a href=""> {{ post.title }} </a></h1>
 		<p>{{ post.text|linebreaks }} </p>
 	    </div>
 	{% endfor %}
-    </body>
-</html>
+{% endblock %}
