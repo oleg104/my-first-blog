@@ -8,7 +8,9 @@
 		</div>
 
 		<h1><a href="{%	url 'post_detail'   pk=post.pk	%}"> {{ post.title }} </a></h1>
+		{% autoescape off %}
 		<p>{{ post.text|linebreaks|truncatewords:30 }} </p>
+		{% endautoescape %}
 	    </div>
 	{% endfor %}
 {% endblock %}
